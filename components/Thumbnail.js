@@ -4,6 +4,7 @@ import {
 } from '@heroicons/react/outline'
 import { forwardRef } from "react";
 const  Thumbnail=forwardRef(({ result },ref)=> {
+    console.log(result)
     const BASE_URL = "https:/image.tmdb.org/t/p/original/";
     return (
         <div ref={ref} className="p-2 group cursor-pointer transition duration-200
@@ -11,8 +12,8 @@ const  Thumbnail=forwardRef(({ result },ref)=> {
             <Image
                 layout="responsive"
                 src={
-                    `${BASE_URL}${result.backdrop_path || result.poster_path}` ||
-                    `${BASE_URL}${result.poster_path}`
+                    `${BASE_URL}${result.backdrop_path || result.poster_path}` 
+                  //  `${BASE_URL}${result.poster_path}`
                 }
                 height={1080}
                 width={1920}
